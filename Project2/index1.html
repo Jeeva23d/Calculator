@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Login form</title>
+    <style>
+      html, body {
+      display: flex;
+      background-color: gray;
+      justify-content: center;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 15px;
+      }
+      form {
+    background-color: white;
+      border: 5px solid #f1f1f1;
+      }
+      input[type=text], input[type=password],input[type=email] {
+      width: 100%;
+      padding: 16px 8px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      }
+      button {
+      background-color: #8ebf42;
+      color: white;
+      padding: 14px 0;
+      margin: 10px 0;
+      border: none;
+      cursor: grabbing;
+      width: 100%;
+      }
+      h1 {
+      text-align:center;
+      font-size:18;
+      }
+      button:hover {
+      opacity: 0.8;
+      }
+      .formcontainer {
+      text-align: left;
+      margin: 24px 50px 12px;
+      }
+      .container {
+      padding: 16px 0;
+      text-align:left;
+      }
+      span.psw {
+      float: right;
+      padding-top: 0;
+      padding-right: 15px;
+      }
+     
+      @media screen and (max-width: 300px) {
+      span.psw {
+      display: block;
+      float: none;
+      }
+    }
+    
+    </style>
+    
+  </head>
+  <body>
+    <!-- <form action="" method="post" onsubmit=" return Conformation( )"> -->
+      <form action="" method="post"  onsubmit="return confirmation( )" >
+      <h1>Login Form</h1>
+      <div class="formcontainer">
+        <div class="line">
+            <hr color="#8ebf42">
+        </div>
+         <label>Usernam</label>
+        <input type="text" placeholder="Enter Username" id="uname" name="uname" required>
+        <label >Email</label><input type="email"  name="email" placeholder="Enter Email" id="email" required>
+        <label >Password</label><input type="password"  id="psw" name="psw"  placeholder="Enter 6-digit or 6-character" required>
+        <label><strong>Confirm Password</strong></label><input type="password"  id="conpws" placeholder="Confirm Password" name="conpsw"  required>
+        <button class="btn" type="submit"  formaction="Project.html" > Login </button> 
+      
+    <form>
+         <div class="container" style="background-color: #eee">
+        <label style="padding-left: 15px">
+          <input type="checkbox"  checked="checked" name="remember"> Remember me
+        </label>
+        <span class="psw"><a href="#"> Forgot password?</a></span>
+      </p>
+    </form>
+    <script src="formvaild.js">
+     
+    </script>
+    
+    
+  </body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formcss.css">
+    <title>login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&family=Phudu:wght@600&family=Roboto+Condensed:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="link-cont">
+        <a href="Calculater.html" class="nav">Calculator</a>
+        <a href="to-do.html" class="nav">To-Dolist</a>
+    </nav>
+    <video src="pexels-ambientnature-atmosphere-5948574 (2160p).mp4" autoplay muted loop></video>
+    <form action="" method="post"  onsubmit="return confirmation( )" >
+    
+    <div class="container3">
+       <center> <h1 style="color:rgb(223, 219, 214)"><b>Login</b></h1></center>
+        <i style="color: red; font-size: small;">The fileds with * are required</i> 
+       <p style="color:rgb(222, 209, 209);">
+
+        <label> Name*:</label><input type="text" id="name" required style="margin-left:20px ; width: 200px; height:20px;" ><br>
+         <label>  Email*:</label> <input type="email" name="email" id="email" required style="margin-left:20px ;"><br>
+           
+         <label>Password*: </label> <input type="password" name="pass" class="pass" id="pass"  placeholder="min six characters or digits"    length="6"><br>
+           <i style="color: Red; font-size: smaller;">
+            confirm-><br>
+            
+        </i>
+      <label>Password*:</label><input type="password" name="repass" class="pass" id="repass" placeholder="min six characters or digits"  length="6"><br>
+        <button class="btn" type="submit"  formaction="Project.html" > Login </button>
+    </p>
+
+</i>
+    </div>
+</form>
+
+</body>
+<script src="formvaild.js"></script>
+</html> -->

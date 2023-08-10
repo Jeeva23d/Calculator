@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Css Version of To do list</title>
+    <style>
+      body{
+  font-family: Arail;
+  background-color: black;
+  color: white;
+}
+.title{
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.name-input{
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.date-input{
+  border: none;
+  border-radius: 5px;
+  padding: 15px 20px;
+  cursor: pointer;
+}
+.add-button{
+  border-radius: 5px;
+  padding: 15px 30px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  background-color: green;
+}
+.add-button:hover{
+  background-color: white;
+  color: green;
+}
+
+.todo-input-grid,
+.todo-grid{
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  row-gap: 20px;
+  column-gap: 20px;
+  align-items: center;
+  font-size: 18px;
+}
+
+.todo-input-grid{
+  margin-bottom: 20px;
+  align-items: stretch;
+}
+
+.todo-delete-button{
+  background-color: rgba(255, 0, 0, 0.785);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+}
+
+.todo-delete-button:hover{
+  background-color: white;
+  color:  rgb(255, 0, 0);
+}
+.cal{
+    margin-left: 1100px;
+    margin-top: 400px;
+    background-color: indianred;
+    border-radius: 10px;
+    padding:5px 5px;
+    width:150px;
+    height: 50px;
+}
+
+    </style>
+  </head>
+  <body>
+    <p class="title">To-Do list</p>
+    
+    <div class="todo-input-grid">
+      <input type="text" class="js-name-input name-input" placeholder="To do name">
+      <input type="date" class="js-date-input date-input">
+      <button onclick="
+        todoAdd();
+      " class="add-button">Add</button>
+    </div>
+    <div class="js-result to-do-grid todo-grid"></div>
+    <button type="submit" class="cal" onclick="location.href='calculator.html'">Calculator</button>
+    
+  <script>
+    let todoList = [{
+  name: '',
+  dueDate: ''
+}];
+function todoAdd(){
+  
+  const inputElement = document.querySelector('.js-name-input');
+  const dateElement = document.querySelector('.js-date-input');
+
+  const name = inputElement.value;
+  const dueDate = dateElement.value; 
+  
+  if(name && dueDate){
+    todoList.push({
+      name,
+      dueDate
+      //short Hand
+      // name: name,
+      // dueDate: dueDate,
+  });
+  }
+
+  inputElement.value = '';
+  displayList();
+}
+function displayList(){
+  let toListHtml = '';
+  for(let i in todoList){
+
+    const toDoObject = todoList[i];
+    const {name,dueDate} = toDoObject;
+    // const name = toDoObject.name;
+    // const duDate = toDoObject.dueDate;
+    if(name && dueDate){
+      toListHtml += `
+        <div class="todo-output">${name}</div>
+        <div class="todo-output">${dueDate}</div>
+        <button onclick="
+          todoList.splice(${i},1);
+          displayList();
+        " class="todo-delete-button">Delete</button>
+      `;
+    }
+  }
+
+  document.querySelector('.js-result').innerHTML = toListHtml;
+}
+  </script>
+  </body>
+</html>
